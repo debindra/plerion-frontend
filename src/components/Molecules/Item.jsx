@@ -12,7 +12,8 @@ function Item({item,onDeleteClick }) {
     <>
     <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                 <td className="p-4">
-                    <img src={item.imageUrl} alt={item.name} width={40} height={40} className='productImage'  />
+                    <img src={item.imageUrl || item.image_url} alt={item.name} width={40} height={40} className='productImage'  />
+                    {/* //TODO: Image should be thumbnail image(from s3 bucket) instead of url image */}
                 </td>
                 <td className="px-6 py-4 font-semibold text-gray-900 dark:text-white">
                     {item.productName}
